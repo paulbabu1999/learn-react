@@ -1,31 +1,47 @@
-export default function Gallery() {
+const baseUrl = 'https://i.imgur.com/';
+const person1 = {
+  name: 'Maria Skłodowska-Curie',
+  imageId: 'szV5sdG',
+  imageSize: 's',
+  profession:'physicist and chemist',
+  awards:"Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal",
+  discovery:"polonium (element)"
+
+};
+
+export default function Profile(){
+  return (<div>
+    <Gallery person={person1}/>
+  </div>)
+}
+export  function Gallery(person) {
   return (
     <div>
       <h1>Notable Scientists</h1>
       <section className="profile">
-        <h2>Maria Skłodowska-Curie</h2>
+        <h2>Maria Skłodowska-Curie{person.name}</h2>
         <img
           className="avatar"
-          src='https://i.imgur.com/szV5sdGs.jpg'
-          alt="Maria Skłodowska-Curie"
+          src={baseUrl +person.imageId  +person.imageSize +".jpg"}
+          alt={person.name}
           width={70}
           height={70}
         />
         <ul>
           <li>
             <b>Profession: </b>
-            physicist and chemist
+            physicist and chemist{person.profession}
           </li>
           <li>
-            <b>Awards: 4 </b>
-            (Nobel Prize in Physics, Nobel Prize in Chemistry, Davy Medal, Matteucci Medal)
+            <b>Awards: 4{person.awards} </b>
+            {person.awards}
           </li>
           <li>
             <b>Discovered: </b>
-            polonium (element)
+            {person.discovery}
           </li>
         </ul>
-      </section>
+      {/* </section>
       <section className="profile">
         <h2>Katsuko Saruhashi</h2>
         <img
@@ -48,7 +64,7 @@ export default function Gallery() {
             <b>Discovered: </b>
             a method for measuring carbon dioxide in seawater
           </li>
-        </ul>
+        </ul>*/}
       </section>
     </div>
   );
