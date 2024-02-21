@@ -7,11 +7,13 @@ import Counter from './components/snapshot'
 import Form from './components/snapshot2'
 import RequestTracker from './qcomps/shoppingCart'
 import Scoreboard from './qcomps/updObjectsForm'
+import List from './qcomps/artistsRemoveArr'
+import BucketList from './qcomps/arrObj'
 
 export default function Home() {
   return (
     <div className={styles.main}>
-        <Scoreboard />
+        <BucketList />
     </div>
   )
 }
